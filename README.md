@@ -48,6 +48,12 @@ export default {
 }
 ```
 
+## Slots
+| 名称 | 说明 |
+| :----: | :----: |
+| title | 模态框头部 slot |
+| body | 模态框主体内容 slot |
+
 
 ## Properties
 
