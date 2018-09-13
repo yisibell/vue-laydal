@@ -16,7 +16,7 @@
 ## Installation
 **Using npm**
 ``` bash
-$ npm install laydal --save
+$ npm install vue-laydal --save
 ```
 
 ## Usage
@@ -28,7 +28,7 @@ $ npm install laydal --save
 ``` js
 // mian.js
 import Vue from 'vue'
-import laydal from 'laydal'
+import laydal from 'vue-laydal'
 
 Vue.use(laydal)
 
@@ -38,7 +38,7 @@ Vue.use(laydal)
 > 使用解构的方式，在你需要的时候引入。引入 `modal` 组件时，需要局部注册下。
 
 ``` js
-import { layer , modal } from 'laydal'
+import { layer , modal } from 'vue-laydal'
 export default {
   name: "demo",
   components:{ modal },
