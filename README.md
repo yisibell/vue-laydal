@@ -2,10 +2,13 @@
 > A popup component for vue.js
 
 ## Introduce
-`laydal` : 其实就是 `layer`(layui中的弹出层库) 和 `modal`（bootrap模态框）的结合体。
-做这个包的初衷就是因为 `layer` 并没有 es6 和 CommonJS 模块化的 版本 ，并且  `layer` 中 没有 模态框这一功能。于是得来一下 `laydal` 。
+`laydal`，其实就是 `layer`(layui中的弹出层库) 和 `modal`（bootrap模态框）的结合体。<br/>
+做这个包的初衷就是因为 `layer` 并没有 es6 和 CommonJS 模块化的 版本 ，并且  `layer` 中 没有 模态框这一功能。于是得来一下 `laydal` 。<br/>
 解决日常开发需求。<br/>
+
 你可以在安装完 `laydal` 后 使用 `layer` 的所有接口api ，其功能完全和 `layer` 官方文档一样，所以要想知道 `layer` 的用法，看其官方文档即可。<br/>
+<a href="https://layer.layui.com/">layer官网</a><br/>
+
 另外，我在 `laydal` 中加入了 `modal` 组件，其就是 `bootstrap` 中的 模态框原型，样式完全和 `bootstrap-3.x.x` 版本一模一样，同时你可以在 `modal` <br/>
 组件中使用 `bootstrap-3.x.x` 的 所有样式。
 
