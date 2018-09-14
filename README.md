@@ -3,8 +3,7 @@
 
 ## Introduce
 `laydal`，其实就是 `layer`(layui中的弹出层库) 和 `modal`（bootstrap模态框）的结合体。<br/>
-做这个包的初衷就是因为 `layer` 并没有 es6 和 CommonJS 模块化的 版本 ，并且  `layer` 中 没有 模态框这一功能。于是得来一下 `laydal` 。<br/>
-解决日常开发需求。<br/>
+做这个包的初衷就是因为 `layer` 并没有 es6 和 CommonJS 模块化的 版本 ，并且 `layer` 中没有模态框这一功能。于是就有了 `laydal`,解决日常开发需求。<br />
 
 你可以在安装完 `laydal` 后 使用 `layer` 的所有接口api ，其功能完全和 `layer` 官方文档一样。<br/>
 所以要想知道 `layer` 的用法，看其官方文档即可。<a href="https://layer.layui.com/">layer官网</a> <br/>
