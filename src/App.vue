@@ -1,7 +1,6 @@
 <template>
     <div>
-      <modal @hidden="hidden" @shown="shown" v-model="show" @hide="hideModal">
-      </modal>
+      <modal v-model="show" @confirm="yes"></modal>
       <button @click="show = true">click</button>
     </div>
 </template>
@@ -19,13 +18,7 @@ export default {
     modal
   },
   methods: {
-    hidden(){
-      console.log("hidden");
-    },
-    shown(){
-      console.log("shown");
-    },
-    hideModal(){
+    yes(){
       this.show = false;
     }
   }

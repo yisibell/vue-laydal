@@ -2,12 +2,12 @@
 > A popup component for vue.js
 
 ## Introduce
-`laydal`，其实就是 `layer`(layui中的弹出层库) 和 `modal`（bootrap模态框）的结合体。<br/>
+`laydal`，其实就是 `layer`(layui中的弹出层库) 和 `modal`（bootstrap模态框）的结合体。<br/>
 做这个包的初衷就是因为 `layer` 并没有 es6 和 CommonJS 模块化的 版本 ，并且  `layer` 中 没有 模态框这一功能。于是得来一下 `laydal` 。<br/>
 解决日常开发需求。<br/>
 
-你可以在安装完 `laydal` 后 使用 `layer` 的所有接口api ，其功能完全和 `layer` 官方文档一样，所以要想知道 `layer` 的用法，看其官方文档即可。<br/>
-<a href="https://layer.layui.com/">layer官网</a><br/>
+你可以在安装完 `laydal` 后 使用 `layer` 的所有接口api ，其功能完全和 `layer` 官方文档一样。<br/>
+所以要想知道 `layer` 的用法，看其官方文档即可。<a href="https://layer.layui.com/">layer官网</a> <br/>
 
 另外，我在 `laydal` 中加入了 `modal` 组件，其就是 `bootstrap` 中的 模态框原型，样式完全和 `bootstrap-3.x.x` 版本一模一样，同时你可以在 `modal` <br/>
 组件中使用 `bootstrap-3.x.x` 的 所有样式。
@@ -69,37 +69,42 @@ export default {
 | saveText | String | 保存按钮的文本 | - | 保存 | 否 |
 | hideclosebtn | Boolean | 是否隐藏关闭按钮 | - | false | 否 |
 | hidesavebtn | Boolean | 是否隐藏保存按钮 | - | false | 否 |
+| clickmaskclose | Boolean | 是否使用点击弹窗遮罩层关闭模态框 | - | true | 否 |
 
 
 ## Events
-**@hide**
-> 模态框隐藏控制事件
+
+**@confirm**
+> 点击确定按钮触发事件句柄
 
 ``` html
-<modal v-modal="show" @hide="hideModal" />
-<button @click="show = true">show modal</button>
+<modal v-model="show" @confirm="yes"></modal>
+<button @click="show = true">click</button>
 ```
 
 ``` js
 export default {
   data(){
     return {
-      show: false  // 默认隐藏
+      show: false
     }
   },
   methods: {
-    hideModal(){
+    yes(){
+      // do something you need before hide the modal
       this.show = false;
+
     }
   }
 }
 ```
 
+
 **@shown**
 > 模态框显示时触发事件
 
 ``` html
-<modal v-modal="show" @hide="hideModal" @shown="whenshow" @hidden="whenhide"/>
+<modal v-modal="show" @shown="whenshow" />
 <button @click="show = true">show modal</button>
 ```
 
@@ -122,7 +127,7 @@ export default {
 > 模态框隐藏时触发事件
 
 ``` html
-<modal v-modal="show" @hide="hideModal" @hidden="whenhide"/>
+<modal v-modal="show" @hidden="whenhide"/>
 <button @click="show = true">show modal</button>
 ```
 

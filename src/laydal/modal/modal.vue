@@ -1,11 +1,11 @@
 <template>
 
-  <div class="modal" :class="[isshow ? 'show' : 'fade']" role="dialog">
+  <div class="modal" :class="[isshow ? 'show' : 'fade']" role="dialog" @click.self="clickmaskclose && hideModal()">
     <transition name="modal">
     <div class="modal-dialog" v-show="isshow" role="document" :style="{width:width}">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="hideModal()"><span aria-hidden="true">&times;</span></button>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click.stop="hideModal"><span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title"><slot name="title">Modal title</slot></h4>
         </div>
         <div class="modal-body" :style="{height: height}" style="overflow-y:auto">
@@ -14,8 +14,8 @@
           </slot>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal" @click.stop="hideModal()" v-show="!hideclosebtn">{{closeText}}</button>
-          <button type="button" class="btn btn-primary" v-show="!hidesavebtn">{{saveText}}</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" @click.stop="hideModal" v-show="!hideclosebtn">{{closeText}}</button>
+          <button type="button" class="btn btn-primary" v-show="!hidesavebtn" @click.stop="confirmHandler">{{saveText}}</button>
         </div>
       </div>
     </div>
@@ -39,7 +39,6 @@ export default {
   },
   props: {
     isshow: Boolean,
-   
     width: {
       type: String,
       default: '580px'
@@ -63,6 +62,10 @@ export default {
     hidesavebtn: {
       type: Boolean,
       default: false
+    },
+    clickmaskclose: {
+      type: Boolean,
+      default: true
     }
   },
   watch:{
@@ -73,6 +76,9 @@ export default {
   methods: {
     hideModal(){
       this.$emit("hide")
+    },
+    confirmHandler(){
+      this.$emit("confirm")
     }
   }
   
@@ -86,21 +92,21 @@ export default {
   background-color: rgba(128,128,128,.5);
 }
 .modal-enter-active {
-  animation: vodal-slideDown-enter .5s;
+  animation: modal-slideDown-enter .5s;
 }
 .modal-leave-active {
-  animation: vodal-slideDown-leave .5s;
+  animation: modal-slideDown-leave .5s;
 }
 
 
-@keyframes vodal-slideDown-enter {
+@keyframes modal-slideDown-enter {
     from {
         -webkit-transform: translate3d(0, -100px, 0);
         transform: translate3d(0, -100px, 0);
     }
 }
 
-@keyframes vodal-slideDown-leave {
+@keyframes modal-slideDown-leave {
     to {
         -webkit-transform: translate3d(0, -100px, 0);
         transform: translate3d(0, -100px, 0);
