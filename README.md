@@ -8,8 +8,8 @@
 你可以在安装完 `laydal` 后 使用 `layer` 的所有接口api ，其功能完全和 `layer` 官方文档一样。<br/>
 所以要想知道 `layer` 的用法，看其官方文档即可。<a href="https://layer.layui.com/">layer官网</a> <br/>
 
-另外，我在 `laydal` 中加入了 `modal` 组件，其就是 `bootstrap` 中的 模态框原型，样式完全和 `bootstrap-3.x.x` 版本一模一样，同时你可以在 `modal` <br/>
-组件中使用 `bootstrap-3.x.x` 的 所有样式。
+另外，我在 `laydal` 中加入了 `modal` 组件，其就是 `bootstrap` 中的 模态框原型，样式完全和 `bootstrap-3.x.x` 版本一模一样。<br/>
+同时你可以在 `modal` 组件中使用 `bootstrap-3.x.x` 的 所有样式。<a href="https://v3.bootcss.com/">bootstrap3官网</a>
 
 
 ## Installation

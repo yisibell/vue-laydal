@@ -1,6 +1,6 @@
 {
   "name": "vue-laydal",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A popup component for vue.js",
   "main": "src/laydal/index.js",
   "scripts": {
