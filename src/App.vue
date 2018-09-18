@@ -6,8 +6,7 @@
 </template>
 
 <script>
-import {layer , modal} from './laydal'
-
+import {layer , modal , $ } from './laydal'
 export default {
   data(){
     return {
@@ -19,7 +18,7 @@ export default {
   },
   methods: {
     yes(){
-      this.show = false;
+      layer.msg("你点击了保存按钮，你可以在此时做点什么...")
     }
   }
 }

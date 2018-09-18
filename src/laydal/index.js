@@ -1,5 +1,6 @@
 import Layer from './layer/layer.js'
 import Modal from './modal/index.js'
+import jQuery from './layer/jquery.js'
 
 const install = function(Vue){
   Vue.prototype.$layer = layer
@@ -8,6 +9,7 @@ const install = function(Vue){
 
 export let layer = Layer;
 export let modal = Modal;
+export let $ = jQuery;
 
 export default {
   install

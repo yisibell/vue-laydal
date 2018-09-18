@@ -11,6 +11,7 @@
 另外，我在 `laydal` 中加入了 `modal` 组件，其就是 `bootstrap` 中的 模态框原型，样式完全和 `bootstrap-3.x.x` 版本一模一样。<br/>
 同时你可以在 `modal` 组件中使用 `bootstrap-3.x.x` 的 所有样式。<a href="https://v3.bootcss.com/">bootstrap3官网</a>
 
+`laydal`内置了`jQuery` ，版本为 `1.12.x` ，所以如果你想使用她 ， 你可以`import {$} from 'vue-laydal'` 来使用。
 
 ## Installation
 **Using npm**
@@ -49,6 +50,8 @@ export default {
   }
 }
 ```
+
+## `<modal />`组件的相关说明
 
 ## Slots
 | 名称 | 说明 |
