@@ -5,13 +5,14 @@
 `laydal`，其实就是 `layer`(layui中的弹出层库) 和 `modal`（bootstrap模态框）的结合体。<br/>
 做这个包的初衷就是因为 `layer` 并没有 es6 和 CommonJS 模块化的 版本 ，并且 `layer` 中没有模态框这一功能。于是就有了 `laydal`,解决日常开发需求。<br />
 
-你可以在安装完 `laydal` 后 使用 `layer` 的所有接口api ，其功能完全和 `layer` 官方文档一样。<br/>
-所以要想知道 `layer` 的用法，看其官方文档即可。<a href="https://layer.layui.com/">layer官网</a> <br/>
+- 你可以在安装完 `laydal` 后 使用 `layer` 的所有接口api ，其功能完全和 `layer` 官方文档一样。<br/>所以要想知道 `layer` 的用法，看其官方文档即可。<a href="https://layer.layui.com/">layer官网</a> <br/>
 
-另外，我在 `laydal` 中加入了 `modal` 组件，其就是 `bootstrap` 中的 模态框原型，样式完全和 `bootstrap-3.x.x` 版本一模一样。<br/>
-同时你可以在 `modal` 组件中使用 `bootstrap-3.x.x` 的 所有样式。<a href="https://v3.bootcss.com/">bootstrap3官网</a>
+- 另外，我在 `laydal` 中加入了 `modal` 组件，其就是 `bootstrap` 中的 模态框原型，样式完全和 `bootstrap-3.x.x` 版本一模一样。<br/>同时你可以在 `modal` 组件中使用 `bootstrap-3.x.x` 的 所有样式。<a href="https://v3.bootcss.com/">bootstrap3官网</a>
 
-`laydal`内置了`jQuery` ，版本为 `1.12.x` ，所以如果你想使用她 ， 你可以`import {$} from 'vue-laydal'` 来使用。
+- `laydal`内置了`jQuery` ，版本为 `1.12.x` ，所以如果你想使用她 ， 你可以`import {$} from 'vue-laydal'` 来使用。
+
+- 你还可以使用 `import { Loading } from 'vue-laydal'` 来使用 `loading` 加载提示服务。其中定义了3种动画效果。
+
 
 ## Installation
 **Using npm**
@@ -50,6 +51,34 @@ export default {
   }
 }
 ```
+
+## `Loading` 服务的使用
+该功能是独立于 `layer` 的，加载的动画效果相对较好，目前有3种动画效果可选。
+
+**使用方式**
+
+``` js
+import { Loading } from 'vue-laydal'
+
+var loadingInstance = new Loading()
+
+loadingInstance.open();  //开启 loading
+
+// 随后使用 `loadingInstance.close()` 关闭 loading 即可
+
+```
+
+**配置**
+你可以向构造函数存入选项配置
+``` js
+var loadingInstance = new Loading({ theme : "wave" , bgcolor: "red"})
+```
+
+| 选项 | 类型 |默认值 | 可选值 | 描述 |
+| :---: | :---: | :---: | :---: | :---: |
+| theme | String | `three-bounce` | `fading-circle` , `wave` | 动画类型 |
+| bgcolor | String | `#27A2FF`(淡蓝) | 合法的 css 颜色值 | 设置loading 的颜色 |
+
 
 ## `<modal />`组件的相关说明
 
@@ -147,3 +176,6 @@ export default {
   }
 }
 ```
+
+# Logs
+> 2018-10-23 新增 `loading` 功能

@@ -6,7 +6,8 @@
 </template>
 
 <script>
-import {layer , modal , $ } from './laydal'
+import {layer , modal , $ , Loading} from './laydal'
+
 export default {
   data(){
     return {
@@ -15,6 +16,16 @@ export default {
   },
   components:{
     modal
+  },
+  created(){
+    var loading = new Loading({theme: 'wave'});
+
+    loading.open();
+
+    // setTimeout( ()=>{
+    //   loading.close();
+    // },3000 )
+
   },
   methods: {
     yes(){
