@@ -1,5 +1,5 @@
 {
-  "name": "vue-laydal",
+  "name": "@aidol/vue-laydal",
   "version": "0.4.0",
   "description": "A popup component for vue.js",
   "main": "src/laydal/index.js",

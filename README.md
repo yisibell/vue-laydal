@@ -1,4 +1,4 @@
-# vue-laydal
+# @aidol/vue-laydal
 > A popup component for vue.js
 
 ## Introduce
@@ -9,15 +9,15 @@
 
 - 另外，我在 `laydal` 中加入了 `modal` 组件，其就是 `bootstrap` 中的 模态框原型，样式完全和 `bootstrap-3.x.x` 版本一模一样。<br/>同时你可以在 `modal` 组件中使用 `bootstrap-3.x.x` 的 所有样式。<a href="https://v3.bootcss.com/">bootstrap3官网</a>
 
-- `laydal`内置了`jQuery` ，版本为 `1.12.x` ，所以如果你想使用她 ， 你可以`import {$} from 'vue-laydal'` 来使用。
+- `laydal`内置了`jQuery` ，版本为 `1.12.x` ，所以如果你想使用她 ， 你可以`import {$} from '@aidol/vue-laydal'` 来使用。
 
-- 你还可以使用 `import { Loading } from 'vue-laydal'` 来使用 `loading` 加载提示服务。其中定义了3种动画效果。
+- 你还可以使用 `import { Loading } from '@aidol/vue-laydal'` 来使用 `loading` 加载提示服务。其中定义了3种动画效果。
 
 
 ## Installation
 **Using npm**
 ``` bash
-$ npm install vue-laydal --save
+$ npm install @aidol/vue-laydal --save
 ```
 
 ## Usage
@@ -29,7 +29,7 @@ $ npm install vue-laydal --save
 ``` js
 // mian.js
 import Vue from 'vue'
-import laydal from 'vue-laydal'
+import laydal from '@aidol/vue-laydal'
 
 Vue.use(laydal)
 
@@ -39,7 +39,7 @@ Vue.use(laydal)
 > 使用解构的方式，在你需要的时候引入。引入 `modal` 组件时，需要局部注册下。
 
 ``` js
-import { layer , modal } from 'vue-laydal'
+import { layer , modal } from '@aidol/vue-laydal'
 export default {
   name: "demo",
   components:{ modal },
@@ -58,7 +58,7 @@ export default {
 **使用方式**
 
 ``` js
-import { Loading } from 'vue-laydal'
+import { Loading } from '@aidol/vue-laydal'
 
 var loadingInstance = new Loading()
 
