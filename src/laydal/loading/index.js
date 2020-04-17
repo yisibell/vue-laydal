@@ -1,36 +1,34 @@
-import $ from '../layer/jquery.js'
 import THEMETYPES from './dom/types.js'
 import HTML from './dom'
+import $ from 'jquery'
 
-import './css/laydal-loading.css'
+import './css/laydal-LayLoading.css'
 
-var Loading = function ({ 
-      theme = [THEMETYPES[0]] ,  //loading 样式
-      bgcolor = '#27A2FF'         //loading 颜色
+const LayLoading = function ({ 
+      theme = [THEMETYPES[0]] ,  //LayLoading 样式
+      bgcolor = '#27A2FF'         //LayLoading 颜色
     } = {} ){
 
   this.theme = theme;   
   this.bgcolor = bgcolor; 
-  this.dom = null;  //当前 loading 实例 dom 
+  this.dom = null;  //当前 LayLoading 实例 dom 
 
 }
 
-
-Loading.fn = Loading.prototype = {
-  constructor : Loading,
-  name: "loading"
+LayLoading.fn = LayLoading.prototype = {
+  constructor : LayLoading,
+  name: "LayLoading"
 }
 
-Loading.extend = Loading.fn.extend = function(option){
+LayLoading.extend = LayLoading.fn.extend = function(option){
   for ( let k in option ){
     if ( option.hasOwnProperty( k ) )
     this[k] = option[k];
   }
 }
 
-
-Loading.fn.extend({
-  // 打开 loading 
+LayLoading.fn.extend({
+  // 打开 LayLoading 
   open(){
 
     var theme = this.theme,
@@ -40,11 +38,11 @@ Loading.fn.extend({
     this.dom = $(html);  // 生成 jquery 实例
     this.dom.find('.bgc').css({backgroundColor: bgcolor})
 
-    $('body').children('.laydal-loading').remove();
+    $('body').children('.laydal-LayLoading').remove();
     $('body').prepend( this.dom );
 
   },
-  //关闭 loading
+  //关闭 LayLoading
   close(){
     $( this.dom ).remove();
     this.dom = null;
@@ -52,8 +50,7 @@ Loading.fn.extend({
 
 })
 
-
-export default Loading;
+export default LayLoading;
 
 
 
